@@ -26,9 +26,9 @@ class Calculator:
         for token in tokens:
             if token in self.operators:
                 while (
-                    operators
-                    and operators[-1] in self.operators
-                    and self.precedence[operators[-1]] >= self.precedence[token]
+                        operators
+                        and operators[-1] in self.operators
+                        and self.precedence[operators[-1]] >= self.precedence[token]
                 ):
                     self._apply_operator(operators, values)
                 operators.append(token)
@@ -57,4 +57,3 @@ class Calculator:
         b = values.pop()
         a = values.pop()
         values.append(self.operators[operator](a, b))
-

@@ -1,8 +1,9 @@
-import sys
 import os
+import sys
+
+from dotenv import load_dotenv
 from google import genai
 from google.genai import types
-from dotenv import load_dotenv
 
 from call_function import call_function, available_functions
 from config import MAX_ITERS
@@ -74,8 +75,8 @@ def generate_content(client, messages, verbose):
     for function_call_part in response.function_calls:
         function_call_result = call_function(function_call_part, verbose)
         if (
-            not function_call_result.parts
-            or not function_call_result.parts[0].function_response
+                not function_call_result.parts
+                or not function_call_result.parts[0].function_response
         ):
             raise Exception("empty function call result")
         if verbose:
@@ -90,4 +91,3 @@ def generate_content(client, messages, verbose):
 
 if __name__ == "__main__":
     main()
-

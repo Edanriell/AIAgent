@@ -1,4 +1,5 @@
 import os
+
 from google.genai import types
 
 
@@ -39,4 +40,3 @@ schema_get_files_info = types.FunctionDeclaration(
         },
     ),
 )
-

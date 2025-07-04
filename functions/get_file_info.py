@@ -1,4 +1,5 @@
 import os
+
 from config import MAX_CHARS
 
 
@@ -19,4 +20,3 @@ def get_file_content(working_directory, file_path):
         return content
     except Exception as e:
         return f'Error reading file "{file_path}": {e}'
-

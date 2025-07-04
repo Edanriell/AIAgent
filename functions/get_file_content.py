@@ -1,6 +1,7 @@
 import os
-from google.genai import types
+
 from config import MAX_CHARS
+from google.genai import types
 
 
 def get_file_content(working_directory, file_path):
@@ -36,4 +37,3 @@ schema_get_file_content = types.FunctionDeclaration(
         required=["file_path"],
     ),
 )
-
